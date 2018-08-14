@@ -1,0 +1,14 @@
+﻿@using Syncfusion.EJ2
+<h3>Value, min and max properties: </h3>
+<h5> This sample demonstrates the value, min and max properties of DateTimePicker component.</h5>
+<br />
+<div class="align">
+    @Html.EJS().DateTimePicker("datetimepicker").Placeholder("Select a Date and Time").Max(ViewBag.maxDate).Min(ViewBag.minDate).Render()
+</div>
+
+<style>
+    .align {
+        margin: 0 auto;
+        width: 300px;
+    }
+</style>

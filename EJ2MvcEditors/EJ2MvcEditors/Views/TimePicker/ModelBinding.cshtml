@@ -1,0 +1,33 @@
+﻿@using Syncfusion.EJ2
+@model EJ2MvcEditors.Controllers.TimePicker.TimePickerModelBinding
+<h3> Model bind from code behind Sample: </h3>
+<h5>This sample demonstrates the model bind from code behind using ViewBag and ViewDate of TimePicker component</h5>
+<br />
+<div class="col-lg-12 control-section">
+    <div id="wrapper">
+        <div>
+            <h5>Model binding using ViewBag</h5>
+            @Html.EJS().TimePicker("TimePicker").Placeholder("Select a time").Value(ViewBag.value).Render()
+        </div>
+        <div style="padding-top:10px;">
+            <h5>Model binding using ViewDate</h5>
+            @Html.EJS().TimePicker("TimePick").Placeholder("Select a time").Value(ViewData["value"]).Render()
+        </div>
+    </div>
+</div>
+
+<style>
+    #wrapper {
+        max-width: 246px;
+        margin: 0px auto;
+    }
+
+    #submitbutton {
+        margin-top: 20px;
+        margin-left: 65px;
+    }
+
+    #control-content #wrapper .field-validation-error {
+        color: red;
+    }
+</style>

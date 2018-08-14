@@ -1,0 +1,43 @@
+﻿@using Syncfusion.EJ2
+@model EJ2MvcEditors.Controllers.TimePicker.TimePickerValue
+
+<h3> TimePickerFor Sample: </h3>
+<h5>This sample demonstrates the strongly typed extension support in TimePicker and time format has been set to the component by using format property. Time value is set to TimePicker from code behind and its set to TimePicker in view page by invoking the strongly typed TimePickerFor helper with the lambda expression.</h5>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="col-lg-12 control-section">
+        <div id="wrapper">
+            @Html.EJS().TimePickerFor(model => model.value).Format("HH:mm").Placeholder("Select a Time").Width("200px").Render()
+            <div id="errorMessage">
+                @Html.ValidationMessageFor(model => model.value)
+            </div>
+            <div id="submitbutton">
+                @Html.EJS().Button("btn").Content("Post").Render()
+            </div>
+        </div>
+    </div>
+}
+<style>
+    #errorMessage {
+        color: red;
+        text-align: center
+    }
+
+    #wrapper {
+        max-width: 246px;
+        margin: 0px auto;
+    }
+
+    #submitbutton {
+        margin-top: 20px;
+        margin-left: 65px;
+    }
+
+    #control-content #wrapper .field-validation-error {
+        color: red;
+    }
+</style>
+
+

@@ -1,0 +1,14 @@
+﻿@using Syncfusion.EJ2
+<h3>Value, Min and Max Properties: </h3>
+<h5> This sample demonstrates the value, min and max properties of Calendar component.</h5>
+<br />
+<div class="align">
+    @Html.EJS().Calendar("calendar").Min(ViewBag.minDate).Max(ViewBag.maxDate).Render()
+</div>
+
+<style>
+    .align {
+        margin: 0 auto;
+        width: 300px;
+    }
+</style>

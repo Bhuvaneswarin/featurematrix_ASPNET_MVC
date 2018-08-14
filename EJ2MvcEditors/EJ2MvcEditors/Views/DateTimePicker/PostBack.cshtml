@@ -1,0 +1,40 @@
+﻿@using Syncfusion.EJ2
+@model EJ2MvcEditors.Controllers.DateTimePicker.DateTimePickerPostBack
+<h3> Form postback Sample: </h3>
+<h5>In this sample, the DateTimePicker data have been submitted using postback.</</h5>
+<br />
+@using (Html.BeginForm("PostBack", "DateTimePicker", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+    <div class="col-lg-12 control-section">
+        <div id="wrapper">
+            @Html.EJS().DateTimePickerFor(model => model.value).Format("dd-MMM-yy hh:mm a").Placeholder("Choose a date and time").Width("250px").Render()
+            <div id="errorMessage">
+                @Html.ValidationMessageFor(model => model.value)
+            </div>
+            <div id="submitbutton">
+                @Html.EJS().Button("btn").Content("Submit").Render()
+            </div>
+        </div>
+    </div>
+}
+<style>
+    #errorMessage {
+        color: red;
+        text-align: center
+    }
+
+    #wrapper {
+        max-width: 246px;
+        margin: 0px auto;
+    }
+
+    #submitbutton {
+        margin-top: 20px;
+        margin-left: 65px;
+    }
+
+    #control-content #wrapper .field-validation-error {
+        color: red;
+    }
+</style>

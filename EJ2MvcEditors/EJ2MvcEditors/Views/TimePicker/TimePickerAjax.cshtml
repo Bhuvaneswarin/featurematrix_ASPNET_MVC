@@ -1,0 +1,43 @@
+﻿@model EJ2MvcEditors.Controllers.TimePicker.TimePickerAjaxValue
+<h3>Ajax Sample: </h3>
+<h5>This sample demonstrates the TimePicker using the Ajax to post the values.</h5>
+<br />
+@using (Html.BeginForm())
+{
+    <div class="col-lg-12 control-section">
+        <div id="wrapper">
+            @Html.EJS().TimePicker("dateTimePicker").Value(Model.value).Width("300px").Placeholder("Select a time").Change("onChange").Render()
+            <div id="submit">
+                <button type="submit"> Submit</button>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    function onChange() {
+        var date = this.value;
+        var url = "/TimePicker/TimePickerAjax/PostValue /";
+        $.ajax({
+            url: "/TimePicker/TimePickerAjax/PostValue",
+            data: JSON.stringify({ value: date }),
+            type: "POST",
+            contentType: "application/json",
+            dataType: "JSON",
+            success: function (result) {
+                console.log(result)
+            },
+        });
+    }
+</script>
+<style>
+    #wrapper {
+        max-width: 246px;
+        margin: 0px auto;
+    }
+
+    #submitbutton {
+        margin-top: 20px;
+        margin-left: 65px;
+    }
+</style>

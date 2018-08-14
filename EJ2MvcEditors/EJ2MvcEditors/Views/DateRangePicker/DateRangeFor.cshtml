@@ -1,0 +1,32 @@
+﻿@using Syncfusion.EJ2
+@model EJ2MvcEditors.Controllers.DateRangePicker.DateRangePickerFor
+<h3> DateRangePickerFor Sample: </h3>
+<h5>DateRangePickerFor sample</h5>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="col-lg-12 control-section">
+        <div id="wrapper">
+            @Html.EJS().DateRangePickerFor(model => model.value).Format("dd-MMM-yy").Placeholder("Choose a Date").Width("200px").Render()
+            <div id="submitbutton">
+                @Html.EJS().Button("btn").Content("Post").Render()
+            </div>
+        </div>
+    </div>
+}
+<style>
+    #wrapper {
+        max-width: 246px;
+        margin: 0px auto;
+    }
+
+    #submitbutton {
+        margin-top: 20px;
+        margin-left: 65px;
+    }
+
+    #control-content #wrapper .field-validation-error {
+        color: red;
+    }
+</style>

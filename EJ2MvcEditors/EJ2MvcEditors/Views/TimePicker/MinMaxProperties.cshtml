@@ -1,0 +1,15 @@
+﻿@using Syncfusion.EJ2
+<h3>Value, min and max properties: </h3>
+<h5> This sample demonstrates the value, min and max properties of TimePicker component.</h5>
+<br />
+<div class="align">
+    @Html.EJS().TimePicker("timepicker").Placeholder("Select a Time").Value(ViewBag.value).Min(ViewBag.minVal).Max(ViewBag.maxVal).Render()
+</div>
+
+<style>
+    .align {
+        margin: 0 auto;
+        width: 300px;
+    }
+</style>
+
