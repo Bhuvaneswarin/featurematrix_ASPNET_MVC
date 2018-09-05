@@ -13,7 +13,7 @@ namespace EJ2MvcEditors.Controllers.TimePicker
     }
     public partial class TimePickerController : Controller
     {
-        // GET: TimePickerFor
+        // GET: Model Binding
         public ActionResult ModelBinding()
         {
             var model = new TimePickerModelBinding() {

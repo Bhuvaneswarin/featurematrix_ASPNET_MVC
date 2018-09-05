@@ -1,0 +1,19 @@
+﻿@using Syncfusion.EJ2
+<h3>Time Zone sample: </h3>
+<h5> This sample demonstrates the time zone properties of DateRangePicker component.</h5>
+<br />
+<div class="align">
+    @Html.EJS().DateRangePicker("daterangepicker1").Placeholder("Select a Date range").StartDate(ViewBag.startDate1).EndDate(ViewBag.endDate1).Render()
+</div>
+
+<div class="align" style="padding-top:20px;">
+    @Html.EJS().DateRangePicker("daterangepicker2").Placeholder("Select a Date range").StartDate(ViewBag.startDate2).EndDate(ViewBag.endDate2).Render()
+</div>
+
+<style>
+    .align {
+        margin: 0 auto;
+        width: 300px;
+    }
+</style>
+

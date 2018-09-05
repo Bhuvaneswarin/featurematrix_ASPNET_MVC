@@ -1,0 +1,18 @@
+﻿@using Syncfusion.EJ2
+<h3>Time zone sample: </h3>
+<h5> This sample demonstrates the time zone properties of Calendar component.</h5>
+<br />
+<div class="align">
+    @Html.EJS().Calendar("calendar1").Value(ViewBag.value1).Render()
+</div>
+
+<div class="align" style="padding-top:20px;">
+    @Html.EJS().Calendar("calendar2").Value(ViewBag.value2).Render()
+</div>
+
+<style>
+    .align {
+        margin: 0 auto;
+        width: 300px;
+    }
+</style>

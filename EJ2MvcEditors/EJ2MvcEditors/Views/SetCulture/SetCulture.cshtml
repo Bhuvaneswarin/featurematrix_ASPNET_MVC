@@ -1,0 +1,56 @@
+﻿@using Syncfusion.EJ2
+<h3>SetCulture sample: </h3>
+<h5> This sample demonstrates the setCulture properties of Picker's component.</h5>
+<br />
+<div class="align">
+    @Html.EJS().Calendar("calendar").Value(ViewBag.value).Render()
+</div>
+<div class="align1">
+    @Html.EJS().DatePicker("datepicker").Placeholder("Choose a Date").Value(ViewBag.value).Render()
+</div>
+<div class="align1">
+    @Html.EJS().DateTimePicker("datetimepicker").Placeholder("Choose a Date and Time").Value(ViewBag.value).Render()
+</div>
+<div class="align1">
+    @Html.EJS().DateRangePicker("daterangepicker").Placeholder("Choose a Date range").StartDate(ViewBag.startDate).EndDate(ViewBag.endDate).Render()
+</div>
+<div class="align1">
+    @Html.EJS().TimePicker("timepicker").Placeholder("Choose a Time").Value(ViewBag.value).Render()
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        loadCultureFiles("es-EC");
+    });
+
+    function loadCultureFiles(name) {
+        var files = ['numbers.json', 'timeZoneNames.json', 'currencies.json', 'ca-gregorian.json'];
+        var loadCulture = function (prop) {
+            var val, ajax;
+            ajax = new ej.base.Ajax(location.origin + '/../../scripts/cldr-data/main/' + name + '/' + files[prop], 'GET', true);
+            ajax.onSuccess = function (value) {
+                val = value;
+                ej.base.loadCldr(JSON.parse(val));
+            };
+            ajax.send();
+            ej.base.setCulture('es-EC');
+        };
+        for (var prop = 0; prop < files.length; prop++) {
+            loadCulture(prop);
+        }
+    }
+
+</script>
+
+<style>
+    .align {
+        margin: 0 auto;
+        width: 300px;
+    }
+    .align1 {
+        margin: 0 auto;
+        width: 300px;
+        padding-top: 40px;
+    }
+</style>
+

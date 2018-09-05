@@ -152,6 +152,7 @@
     <Compile Include="Controllers\Calendar\MinMaxPropertiesController.cs" />
     <Compile Include="Controllers\Calendar\ModelBindingController.cs" />
     <Compile Include="Controllers\Calendar\PartialViewController.cs" />
+    <Compile Include="Controllers\Calendar\TimeZoneController.cs" />
     <Compile Include="Controllers\DatePicker\AjaxCallingController.cs" />
     <Compile Include="Controllers\DatePicker\DatePickerForController.cs" />
     <Compile Include="Controllers\DatePicker\GlobalizationController.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="Controllers\DatePicker\ModelBindingController.cs" />
     <Compile Include="Controllers\DatePicker\PartialViewController.cs" />
     <Compile Include="Controllers\DatePicker\PostBackController.cs" />
+    <Compile Include="Controllers\DatePicker\TimeZoneController.cs" />
     <Compile Include="Controllers\DateRangePicker\DateRangeAjaxController.cs" />
     <Compile Include="Controllers\DateRangePicker\DateRangeForController.cs" />
     <Compile Include="Controllers\DateRangePicker\GlobalizationController.cs" />
@@ -166,6 +168,7 @@
     <Compile Include="Controllers\DateRangePicker\ModelBindingController.cs" />
     <Compile Include="Controllers\DateRangePicker\PartialViewController.cs" />
     <Compile Include="Controllers\DateRangePicker\PostBackController.cs" />
+    <Compile Include="Controllers\DateRangePicker\TimeZoneController.cs" />
     <Compile Include="Controllers\DateTimePicker\DateTimeAjaxController.cs" />
     <Compile Include="Controllers\DateTimePicker\DateTimePickerForController.cs" />
     <Compile Include="Controllers\DateTimePicker\GlobalizationController.cs" />
@@ -173,7 +176,9 @@
     <Compile Include="Controllers\DateTimePicker\ModelBindingController.cs" />
     <Compile Include="Controllers\DateTimePicker\PartialViewController.cs" />
     <Compile Include="Controllers\DateTimePicker\PostBackController.cs" />
+    <Compile Include="Controllers\DateTimePicker\TimeZoneController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SetCulture\SetCultureController.cs" />
     <Compile Include="Controllers\Sidebar\ModelBindingController.cs" />
     <Compile Include="Controllers\Sidebar\PartialViewController.cs" />
     <Compile Include="Controllers\TimePicker\GlobalizationController.cs" />
@@ -183,6 +188,7 @@
     <Compile Include="Controllers\TimePicker\PostBackController.cs" />
     <Compile Include="Controllers\TimePicker\TimePickerAjaxController.cs" />
     <Compile Include="Controllers\TimePicker\TimePickerForController.cs" />
+    <Compile Include="Controllers\TimePicker\TimeZoneController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,6 +271,12 @@
     <Content Include="Views\DateRangePicker\DateRangeFor.cshtml" />
     <Content Include="Views\DateRangePicker\PostBack.cshtml" />
     <Content Include="Views\Sidebar\ModelBinding.cshtml" />
+    <Content Include="Views\DatePicker\TimeZone.cshtml" />
+    <Content Include="Views\DateTimePicker\TimeZone.cshtml" />
+    <Content Include="Views\DateRangePicker\TimeZone.cshtml" />
+    <Content Include="Views\Calendar\TimeZone.cshtml" />
+    <Content Include="Views\TimePicker\TimeZone.cshtml" />
+    <Content Include="Views\SetCulture\SetCulture.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
