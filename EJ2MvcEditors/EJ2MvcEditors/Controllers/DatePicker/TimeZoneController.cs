@@ -12,7 +12,7 @@ namespace EJ2MvcEditors.Controllers.DatePicker
         public ActionResult TimeZone()
         {
             var isoDate = "2013-06-13T14:00:00.000Z";
-            ViewBag.value1 = new DateTime(2013, 06, 13, 14, 00, 00);
+            ViewBag.value1 = "2013-06-13T14:00:00.000";
             ViewBag.value2 = isoDate;
             return View();
         }

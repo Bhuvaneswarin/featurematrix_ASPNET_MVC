@@ -6,34 +6,65 @@
     @Html.EJS().Calendar("calendar").Value(ViewBag.value).Render()
 </div>
 <div class="align1">
-    @Html.EJS().DatePicker("datepicker").Placeholder("Choose a Date").Value(ViewBag.value).Render()
+    @Html.EJS().DatePicker("datepicker").Value(ViewBag.value).Render()
 </div>
 <div class="align1">
-    @Html.EJS().DateTimePicker("datetimepicker").Placeholder("Choose a Date and Time").Value(ViewBag.value).Render()
+    @Html.EJS().DateTimePicker("datetimepicker").Value(ViewBag.value).Render()
 </div>
 <div class="align1">
-    @Html.EJS().DateRangePicker("daterangepicker").Placeholder("Choose a Date range").StartDate(ViewBag.startDate).EndDate(ViewBag.endDate).Render()
+    @Html.EJS().DateRangePicker("daterangepicker").StartDate(ViewBag.startDate).EndDate(ViewBag.endDate).Render()
 </div>
 <div class="align1">
-    @Html.EJS().TimePicker("timepicker").Placeholder("Choose a Time").Value(ViewBag.value).Render()
+    @Html.EJS().TimePicker("timepicker").Value(ViewBag.value).Render()
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        loadCultureFiles("es-EC");
+        var L10n = ej.base.L10n;
+        L10n.load({
+            "de": {
+                "calendar": {
+                    today: "heute"
+                },
+                'datepicker': {
+                    placeholder: 'Wählen Sie ein Datum',
+                    today: 'heute'
+                },
+                'daterangepicker': {
+                    placeholder: 'Wählen Sie einen Bereich aus',
+                    startLabel: 'Wählen Sie Startdatum',
+                    endLabel: 'Wählen Sie Enddatum',
+                    applyText: 'Sich bewerben',
+                    cancelText: 'Stornieren',
+                    selectedDays: 'Ausgewählte Tage',
+                    days: 'Tage',
+                    stomRange: 'benutzerdefinierten Bereich',
+                    startDate: 'Anfangsdatum',
+                    endDate: 'Enddatum'
+                },
+                'datetimepicker': {
+                    placeholder: "Wählen Sie ein Datum und eine Uhrzeit aus",
+                    today: "heute"
+                },
+                'timepicker': {
+                    placeholder: 'Wählen Sie Zeit'
+                }
+            }
+        });
+        loadCultureFiles('de');
     });
 
     function loadCultureFiles(name) {
         var files = ['numbers.json', 'timeZoneNames.json', 'currencies.json', 'ca-gregorian.json'];
         var loadCulture = function (prop) {
             var val, ajax;
-            ajax = new ej.base.Ajax(location.origin + '/../../scripts/cldr-data/main/' + name + '/' + files[prop], 'GET', true);
-            ajax.onSuccess = function (value) {
-                val = value;
-                ej.base.loadCldr(JSON.parse(val));
-            };
+                ajax = new ej.base.Ajax(location.origin + '/../../scripts/cldr-data/main/' + name + '/' + files[prop], 'GET', true);
+                ajax.onSuccess = function (value) {
+                    val = value;
+                    ej.base.loadCldr(JSON.parse(val));
+                };
             ajax.send();
-            ej.base.setCulture('es-EC');
+            ej.base.setCulture('de');
         };
         for (var prop = 0; prop < files.length; prop++) {
             loadCulture(prop);
